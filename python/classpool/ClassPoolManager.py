@@ -16,6 +16,8 @@ class ClassPoolManager(Singleton):
     def deleteClassPool(self, classType):
         self.dicClassPool.pop(classType, None)
 
+    def update(self):
+        pass
 
     def debugInfo(self):
         print("ClassPoolManager : count : ", len(self.dicClassPool.keys))
