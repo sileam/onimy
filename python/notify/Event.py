@@ -12,3 +12,6 @@ class Event:
         self.strKey = ""
         self.args = ()
         self.kwargs = {}
+
+    def getKey(self):
+        return self.strKey

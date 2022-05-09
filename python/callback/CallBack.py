@@ -1,9 +1,10 @@
 # coding=utf-8
+from classpool import ClassPoolManager
 
 
 class CallBack:
 
-    def __init__(self, func, *args, **kwargs):
+    def __init__(self, func=None, *args, **kwargs):
         self.func = func
         self.args = args
         self.kwargs = kwargs
@@ -13,6 +14,11 @@ class CallBack:
         self.kwargs.update(kwargs)
         self.func(*curArgs, **self.kwargs)
 
+    def init(self, func, *args, **kwargs):
+        self.func = func
+        self.args = args
+        self.kwargs = kwargs
+
     def reset(self):
         self.func = None
         self.args = []
@@ -20,7 +26,9 @@ class CallBack:
 
 
 def bind(func, *args, **kwargs):
-    return CallBack(func, *args, **kwargs)
+    callback = ClassPoolManager.getInstance().getClassPool(CallBack).getInstance()
+    callback.init(func, *args, **kwargs)
+    return callback
 
 
 class Test:
