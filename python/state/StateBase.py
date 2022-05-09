@@ -1,17 +1,16 @@
-#coding=utf-8
+# coding=utf-8
 
-class StateBase():
-
+class StateBase:
 
     def __init__(self, name):
         self.name = name
-    
 
     def check(self):
         pass
     
-    def update(self, delt):
+    def update(self):
         pass
     
-    def changeToNext(name):
+    def changeToNext(self):
         pass
+
