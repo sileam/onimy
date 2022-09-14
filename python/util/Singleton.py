@@ -7,6 +7,9 @@ class Singleton(object):
 
     @staticmethod
     def getInstance():
+        
+        
+        
         return Singleton()
 
 
