@@ -5,6 +5,7 @@ from util import Singleton
 
 class StateManager(Singleton):
     def __init__(self):
+
         self.dicState = {}
 
     def update(self):
@@ -15,4 +16,3 @@ class StateManager(Singleton):
 
     def createFSM(self, ):
         pass
-    
